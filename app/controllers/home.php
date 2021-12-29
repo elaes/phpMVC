@@ -2,8 +2,10 @@
 
 class Home extends Controller {
 
-    public function index($toto = "vide"){
-        echo 'home/index ' . $toto;
+    public function index($name = ''){
+        $user = $this->model('User');
+        $user->name = $name;
+        echo $user->name;
     }
 
 }
